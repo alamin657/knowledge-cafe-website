@@ -4,7 +4,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBookmark } from '@fortawesome/free-solid-svg-icons'
 const Shop = (props) => {
     console.log(props)
-    const { img, authorimg, name, date, title } = props.product;
+    const { img, authorimg, name, date, title, time } = props.product;
+    const handleToBookMark = props.handleToBookMark;
     return (
         <div className='shop-container'>
             <img src={img} alt="" />
@@ -17,9 +18,7 @@ const Shop = (props) => {
                     </div>
 
                     <div>
-                        <p>: min read <FontAwesomeIcon icon={faBookmark} /></p>
-
-
+                        <p>{time}:min read  <FontAwesomeIcon onClick={() => handleToBookMark(props.product)} icon={faBookmark} /></p>
                     </div>
                 </div>
 
@@ -34,13 +33,3 @@ const Shop = (props) => {
 };
 
 export default Shop;
-/* 
-{/* 
-                <div>
-                    <FontAwesomeIcon icon={faBookmark} />
-
-                </div>
-
-                <div>
-                    <p>{name}</p>
-                    <p>{date}</p> */
