@@ -1,0 +1,12 @@
+.product-container {
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    padding-left: 250px;
+    padding-right: 250px;
+    margin-top: 50px;
+    gap: 20px;
+}
+
+/* .product {
+    padding-left: 10px;
+} */
