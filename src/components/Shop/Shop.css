@@ -3,3 +3,19 @@
     margin: 20px;
     border-radius: 8px;
 }
+
+.writer {
+    display: flex;
+}
+
+
+.bookmark {
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+
+}
+
+.writer img {
+    border-radius: 50%;
+    width: 100px;
+}
