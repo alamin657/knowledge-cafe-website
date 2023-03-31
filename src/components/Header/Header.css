@@ -1,0 +1,10 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 300px;
+    padding-right: 250px;
+}
+
+.header img {
+    border-radius: 50%;
+}
