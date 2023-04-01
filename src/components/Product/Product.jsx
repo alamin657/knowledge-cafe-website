@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Shop from '../Shop/Shop';
 import './Product.css';
 import Cart from '../Cart/Cart';
+import { ToastContainer, toast } from 'react-toastify';
 const Product = () => {
     const [products, setProducts] = useState([]);
     const [carts, setCarts] = useState([]);
@@ -14,14 +15,13 @@ const Product = () => {
     }, [])
     const handleToBookMark = (title) => {
         const filterCart = carts.filter(cart => cart === title)
-        // console.log( cart.title)
         if (filterCart.length === 0) {
             const newProducts = [...carts, title]
             setCarts(newProducts);
 
         }
         else {
-            console.log('alert')
+            toast("Wow so easy!")
         }
 
 
