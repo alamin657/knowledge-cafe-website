@@ -1,19 +1,19 @@
 import React from 'react';
 import './Cart.css';
-const Cart = ({ carts, total }) => {
+const Cart = ({ carts, time }) => {
     return (
         <div>
-            <h4>Spent time on read:{total}</h4>
-            <h2>Bookmarks Blogs:{carts.length}</h2>
-            {
-                carts.map(cart => {
-                    return <div>
-                        <p>{cart}</p>
-                    </div>
-                })
-            }
-
-
+            <h4>Spent time on read:{time} min</h4>
+            <p className='bookmark'>Bookmarks Blogs:{carts.length}</p>
+            <div>
+                {
+                    carts.map(cart => {
+                        return <div>
+                            <p >{cart}</p>
+                        </div>
+                    })
+                }
+            </div>
         </div>
     );
 };

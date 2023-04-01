@@ -2,23 +2,36 @@ import React, { useEffect, useState } from 'react';
 import Shop from '../Shop/Shop';
 import './Product.css';
 import Cart from '../Cart/Cart';
-const Product = ({ markToRead }) => {
+const Product = () => {
     const [products, setProducts] = useState([]);
     const [carts, setCarts] = useState([]);
-    // const [time, setTime] = useState([]);
+    const [time, setTime] = useState(0);
+    // console.log(time);
     useEffect(() => {
         fetch('data.json')
             .then(res => res.json())
             .then(data => setProducts(data))
     }, [])
     const handleToBookMark = (title) => {
-        const newProducts = [...carts, title]
-        setCarts(newProducts);
+        const filterCart = carts.filter(cart => cart === title)
+        // console.log( cart.title)
+        if (filterCart.length === 0) {
+            const newProducts = [...carts, title]
+            setCarts(newProducts);
+
+        }
+        else {
+            console.log('alert')
+        }
+
+
     }
-    // const markToRead = (time) => {
-    //     total = time + total;
-    //     setTime(total)
-    // }
+    const markToRead = (watchTime) => {
+        // console.log(watchTime)
+        const totalTime = time + watchTime;
+        setTime(totalTime);
+
+    }
     return (
         <div className='product-container'>
             <div>
@@ -31,7 +44,10 @@ const Product = ({ markToRead }) => {
                 }
             </div>
             <div className='product'>
-                <Cart carts={carts}></Cart>
+                <Cart carts={carts}
+                    time={time}
+                ></Cart>
+
             </div>
         </div>
     );

@@ -19,7 +19,7 @@ const Shop = ({ markToRead, handleToBookMark, product }) => {
                     </div>
 
                     <div>
-                        <p>{time}:min read  <FontAwesomeIcon onClick={() => handleToBookMark(title)} icon={faBookmark} /></p>
+                        <p>{time}:min read<FontAwesomeIcon onClick={() => handleToBookMark(title)} icon={faBookmark} /></p>
                     </div>
                 </div>
 
