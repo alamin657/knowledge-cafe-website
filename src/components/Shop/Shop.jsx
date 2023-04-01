@@ -2,10 +2,11 @@ import React from 'react';
 import './Shop.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBookmark } from '@fortawesome/free-solid-svg-icons'
-const Shop = (props) => {
-    console.log(props)
-    const { img, authorimg, name, date, title, time } = props.product;
-    const handleToBookMark = props.handleToBookMark;
+const Shop = ({ markToRead, handleToBookMark, product }) => {
+    // console.log(props)
+    const { img, authorimg, name, date, title, time } = product;
+    // const handleToBookMark = props.handleToBookMark;
+
     return (
         <div className='shop-container'>
             <img src={img} alt="" />
@@ -18,7 +19,7 @@ const Shop = (props) => {
                     </div>
 
                     <div>
-                        <p>{time}:min read  <FontAwesomeIcon onClick={() => handleToBookMark(props.product)} icon={faBookmark} /></p>
+                        <p>{time}:min read  <FontAwesomeIcon onClick={() => handleToBookMark(title)} icon={faBookmark} /></p>
                     </div>
                 </div>
 
@@ -26,7 +27,7 @@ const Shop = (props) => {
             </div>
             <h3>{title}</h3>
             <p>#beginners #programming</p>
-            <a href="./Mark as read">Mark as read</a>
+            <button onClick={() => markToRead(time)} style={{ color: 'red' }}>Mark as read</button>
             <hr />
         </div>
     );
