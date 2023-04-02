@@ -3,9 +3,7 @@ import './Shop.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBookmark } from '@fortawesome/free-solid-svg-icons'
 const Shop = ({ markToRead, handleToBookMark, product }) => {
-    // console.log(props)
     const { img, authorimg, name, date, title, time } = product;
-    // const handleToBookMark = props.handleToBookMark;
 
     return (
         <div className='shop-container'>
@@ -29,6 +27,7 @@ const Shop = ({ markToRead, handleToBookMark, product }) => {
             <p>#beginners #programming</p>
             <button onClick={() => markToRead(time)} style={{ color: 'red' }}>Mark as read</button>
             <hr />
+
         </div>
     );
 };

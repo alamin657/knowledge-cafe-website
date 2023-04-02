@@ -14,7 +14,9 @@ function App() {
     <div className="App">
       <Header></Header>
       <Product></Product>
+
       <Blog></Blog>
+
       <ToastContainer></ToastContainer>
     </div>
   )

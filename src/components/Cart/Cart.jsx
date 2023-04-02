@@ -3,13 +3,15 @@ import './Cart.css';
 const Cart = ({ carts, time }) => {
     return (
         <div>
-            <h4>Spent time on read:{time} min</h4>
-            <p className='bookmark'>Bookmarks Blogs:{carts.length}</p>
-            <div>
+            <div className="md:flex">
+                <h4 >Spent time on read:{time} min</h4>
+                <p >Bookmarks Blogs:{carts.length}</p>
+            </div>
+            <div className='cart'>
                 {
                     carts.map(cart => {
                         return <div>
-                            <p >{cart}</p>
+                            <p className='title'>{cart}</p>
                         </div>
                     })
                 }

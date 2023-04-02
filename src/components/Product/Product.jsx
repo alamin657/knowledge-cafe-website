@@ -7,27 +7,21 @@ const Product = () => {
     const [products, setProducts] = useState([]);
     const [carts, setCarts] = useState([]);
     const [time, setTime] = useState(0);
-    // console.log(time);
     useEffect(() => {
         fetch('data.json')
             .then(res => res.json())
             .then(data => setProducts(data))
     }, [])
     const handleToBookMark = (title) => {
-        const filterCart = carts.filter(cart => cart === title)
-        if (filterCart.length === 0) {
-            const newProducts = [...carts, title]
-            setCarts(newProducts);
-
+        const bookMark = carts.find(cart => cart === title);
+        if (!bookMark) {
+            setCarts([...carts, title]);
         }
         else {
-            toast("Wow so easy!")
+            toast('emaging!');
         }
-
-
     }
     const markToRead = (watchTime) => {
-        // console.log(watchTime)
         const totalTime = time + watchTime;
         setTime(totalTime);
 

@@ -1,9 +1,6 @@
-.heading {
+.blog-first {
     text-align: center;
-}
-
-.heading-two {
-    text-align: center;
-    text-decoration: underline;
-
+    border: 2px solid red;
+    margin: 10px;
+    margin-left: 250px;
 }
